@@ -9,7 +9,7 @@
 
 # IDEA
 # ----
-.idea
+.idea/
 .shelf
 /*.iml
 /*.ipr

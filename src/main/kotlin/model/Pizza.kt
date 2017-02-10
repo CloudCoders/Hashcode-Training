@@ -1,11 +1,9 @@
 package model
 
-class Pizza(val R: Int, val C: Int) {
-
-    init {
-        val rows = IntArray(R)
-        val colums = emptyArray<Cell>()
-    }
-
-}
+data class Pizza(
+        val table: Array<Array<Cell>>,
+        val R: Int,
+        val C: Int,
+        val L: Int,
+        val H: Int)
 

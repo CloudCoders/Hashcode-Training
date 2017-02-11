@@ -3,22 +3,22 @@ package storage
 import model.Cell
 import model.Pizza
 import org.hamcrest.core.Is.`is`
-import org.junit.Assert.*
+import org.junit.Assert.assertThat
 import org.junit.Test
 
 /**
 
-    3 4 1 5
-    TMMM
-    MMMM
-    TTTM
+3 4 1 5
+TMMM
+MMMM
+TTTM
 
  */
 class StoreShould {
 
     private fun pizza(): Pizza {
         val store = Store()
-        val pizza = store.read("test.in")
+        val pizza = store.read("src/test.in")
         return pizza
     }
 
@@ -51,7 +51,7 @@ class StoreShould {
     }
 
     @Test
-    fun `read a pizza table information`(){
+    fun `read a pizza table information`() {
         val pizza = pizza().table
 
         val expectedPizza = Array(3) { index ->
@@ -68,11 +68,11 @@ class StoreShould {
      * TTTM
      */
     private fun getExpectedPizzaRow(index: Int): Array<Cell> {
-        val firstRow =  arrayOf(T(), M(), M(), M())
+        val firstRow = arrayOf(T(), M(), M(), M())
         val secondRow = arrayOf(M(), M(), M(), M())
-        val thirdRow =  arrayOf(T(), T(), T(), M())
+        val thirdRow = arrayOf(T(), T(), T(), M())
 
-        return when(index){
+        return when (index) {
             0 -> firstRow
             1 -> secondRow
             2 -> thirdRow

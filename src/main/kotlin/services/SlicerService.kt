@@ -19,7 +19,8 @@ class SlicerService {
             }
         }
 
-        return slices.map { slice -> getBetterSlice(pizza, slice) }
+        return slices
+        //return slices.map { slice -> getBetterSlice(pizza, slice) }
     }
 
     private fun getSliceFrom(pizza: Pizza, row: Int, column: Int): Slice? {

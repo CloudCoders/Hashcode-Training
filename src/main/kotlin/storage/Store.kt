@@ -4,7 +4,6 @@ import model.Cell
 import model.Pizza
 import model.Slice
 import java.io.File
-import java.io.PrintWriter
 import java.util.*
 
 class Store {
@@ -33,11 +32,11 @@ class Store {
     }
 
     fun write(fileName: String, slices: List<Slice>) {
-        val writer = PrintWriter(File(fileName))
-
-        writer.println("${slices.size}")
-        slices.forEach { slice ->
-            writer.println("${slice.startRow} ${slice.endRow} ${slice.startColumn} ${slice.endColumn}")
+        File("$fileName").printWriter().use { out ->
+            out.println("${slices.size}")
+            slices.forEach { slice ->
+                out.println("${slice.startRow} ${slice.startColumn} ${slice.endRow} ${slice.endColumn}")
+            }
         }
     }
 
